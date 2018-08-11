@@ -1,6 +1,9 @@
 package eu.xthedoctah.launcher.controller;
 
 
+import eu.xthedoctah.launcher.auth.Auth;
+import eu.xthedoctah.launcher.auth.Error;
+import eu.xthedoctah.launcher.auth.Response;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,8 +16,7 @@ import java.util.ResourceBundle;
 
 
 public class Controller implements Initializable {
-    private static String password;
-    private static String username;
+
     @FXML
     public PasswordField passwordBox;
     @FXML
@@ -23,10 +25,11 @@ public class Controller implements Initializable {
     @FXML
     public void pressButton(ActionEvent e) {
         if (e.getSource() instanceof Button) {
-            password = passwordBox.getText();
-            username = usernameBox.getText();
+            Auth.getInstance().doAuth(usernameBox.getText(), passwordBox.getText());
         }
-
+        //TODO:If the response is null then check the Error class.
+        System.out.println(Error.getInstance());
+        System.out.println(Response.getInstance());
     }
 
     @Override

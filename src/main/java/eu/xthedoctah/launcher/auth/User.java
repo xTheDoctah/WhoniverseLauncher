@@ -24,6 +24,16 @@ public class User extends ToJson {
         this.requestUser = requestUser;
     }
 
+    /*Signleton*/
+    private static User istanza;
+
+    public static User getInstance() {
+        if (istanza == null) {
+            istanza = new User();
+        }
+        return istanza;
+    }
+
     public Agent getAgent() {
         return agent;
     }
