@@ -14,7 +14,7 @@ import javafx.stage.StageStyle;
 public class Main extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
-    
+
     public static void main(String[] args) {
 
         launch(args);
@@ -25,7 +25,6 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         Parent root = FXMLLoader.load(getClass().getResource("/sample.fxml"));
-
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {

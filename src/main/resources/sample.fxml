@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.xthedoctah.launcher.controller.Controller">
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.xthedoctah.launcher.controller.Controller">
     <children>
-        <Button layoutX="325.0" layoutY="426.0" mnemonicParsing="false" onAction="#pressButton" prefHeight="32.0" prefWidth="150.0" text="Login" />
-        <PasswordField fx:id="passwordBox" layoutX="315.0" layoutY="339.0" />
-        <Label layoutX="315.0" layoutY="307.0" text="Password" />
-        <Label layoutX="315.0" layoutY="204.0" text="Username" />
-      <TextField fx:id="usernameBox" layoutX="315.0" layoutY="229.0" />
+      <TextField fx:id="usernameBox" layoutX="315.0" layoutY="230.0">
+         <effect>
+            <Glow />
+         </effect></TextField>
+        <PasswordField fx:id="passwordBox" layoutX="315.0" layoutY="303.0">
+         <effect>
+            <Glow />
+         </effect></PasswordField>
+        <Button layoutX="315.0" layoutY="358.0" mnemonicParsing="false" onAction="#pressButton" prefHeight="32.0" prefWidth="171.0" styleClass="btn" stylesheets="@style.css" text="Login" textFill="#2c3e50">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+        <Label layoutX="318.0" layoutY="277.0" styleClass="text-label" stylesheets="@style.css" text="Password" textFill="#95a5a6" />
+        <Label layoutX="315.0" layoutY="204.0" styleClass="text-label" stylesheets="@style.css" text="Username" textFill="#95a5a6" />
+      <Button fx:id="closeButton" layoutX="749.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeWindow" style="-fx-background-color: #2c3e50;" text="X" textFill="#e74c3c">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Bloom />
+         </effect>
+      </Button>
     </children>
 </AnchorPane>
