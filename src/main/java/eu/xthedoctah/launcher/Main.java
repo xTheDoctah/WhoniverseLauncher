@@ -21,6 +21,7 @@ public class Main extends Application {
     private double yOffset = 0;
 
     public static void main(String[] args) {
+        Settings.onInit();
         try {
             File file = new File(Settings.workingDir);
             if (!file.exists()) {

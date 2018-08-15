@@ -32,7 +32,7 @@ public class Controller implements Initializable {
     public void pressButton(ActionEvent e) {
         if (e.getSource() instanceof Button) {
             if (Auth.getInstance().doAuth(usernameBox.getText(), passwordBox.getText())) {
-                logger.log(LogType.INFO, Response.getInstance());
+                logger.log(LogType.INFO, "Username: " + Response.getInstance().getSelectedProfile().getName());
             } else {
                 logger.log(LogType.ERROR, Error.getInstance().getErrorMessage());
             }
