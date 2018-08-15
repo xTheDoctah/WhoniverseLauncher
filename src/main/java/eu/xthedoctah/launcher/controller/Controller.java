@@ -4,6 +4,8 @@ package eu.xthedoctah.launcher.controller;
 import eu.xthedoctah.launcher.auth.Auth;
 import eu.xthedoctah.launcher.auth.Error;
 import eu.xthedoctah.launcher.auth.Response;
+import eu.xthedoctah.launcher.logger.LogType;
+import eu.xthedoctah.launcher.logger.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,6 +19,7 @@ import java.util.ResourceBundle;
 
 
 public class Controller implements Initializable {
+    private Logger logger = Logger.getInstance();
 
     @FXML
     public PasswordField passwordBox;
@@ -28,16 +31,17 @@ public class Controller implements Initializable {
     @FXML
     public void pressButton(ActionEvent e) {
         if (e.getSource() instanceof Button) {
-            Auth.getInstance().doAuth(usernameBox.getText(), passwordBox.getText());
+            if (Auth.getInstance().doAuth(usernameBox.getText(), passwordBox.getText())) {
+                logger.log(LogType.INFO, Response.getInstance());
+            } else {
+                logger.log(LogType.ERROR, Error.getInstance().getErrorMessage());
+            }
         }
-        //TODO:If the response is null then check the Error class.
-        System.out.println(Error.getInstance());
-        System.out.println(Response.getInstance());
     }
 
 
     @FXML
-    private void closeWindow(ActionEvent e){
+    private void closeWindow(ActionEvent e) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
