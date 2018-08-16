@@ -42,5 +42,7 @@
                 <Bloom/>
             </effect>
         </Button>
+        <CheckBox mnemonicParsing="false" text="CheckBox"/>
+        <CheckBox mnemonicParsing="false" text="CheckBox"/>
     </children>
 </AnchorPane>
