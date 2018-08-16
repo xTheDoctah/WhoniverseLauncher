@@ -7,11 +7,19 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class IO {
-    public static void createDir(String dirPath) throws SecurityException {
+    public static Boolean createDir(String dirPath) throws SecurityException {
         File file = new File(dirPath);
         if (!file.exists()) {
-            file.mkdir();
+            return file.mkdir();
         }
+        return true;
+    }
+
+    public static Boolean createFileIfNotExist(String filePath) throws IOException {
+        if (!new File(filePath).exists()) {
+            return new File(filePath).createNewFile();
+        }
+        return true;
     }
 
     public static String readFile(String path, Charset encoding) throws IOException {
