@@ -16,9 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Settings {
-    public static String workingDir = System.getProperty("user.home") + "\\.whoniverse";
-    private static String userProfiles = workingDir + "\\profiles.json";
-    private static String settingsFile = workingDir + "\\settings.json";
+    public static String workingDir = System.getProperty("user.home") + "/.whoniverse";
+    private static String userProfiles = workingDir + "/profiles.json";
+    private static String settingsFile = workingDir + "/settings.json";
+    public static String logsPath = Settings.workingDir + "/logs/";
     private static Settings instance;
 
     public static Settings getInstance() {
@@ -30,13 +31,13 @@ public class Settings {
 
     public void onInit() {
         try {
+            IO.createDir(workingDir);
+            IO.createDir(logsPath);
             IO.createFileIfNotExist(userProfiles);
             IO.createFileIfNotExist(settingsFile);
-            IO.createDir(workingDir);
-        } catch (IOException e) {
+
+        } catch (SecurityException |IOException e) {
             e.printStackTrace();
-        } catch (SecurityException ex) {
-            ex.printStackTrace();
         } finally {
             Logger.getInstance().createLog(LogType.INFO, "OS: " +
                     System.getProperty("os.name") +
