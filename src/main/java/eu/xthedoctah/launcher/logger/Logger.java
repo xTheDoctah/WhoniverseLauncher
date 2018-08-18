@@ -15,7 +15,6 @@ public class Logger {
     private String timeFormat = new SimpleDateFormat("HH-mm-ss").format(new Date()) + ".log";
 
 
-
     public static Logger getInstance() {
         if (instance == null) {
             instance = new Logger();
@@ -26,7 +25,7 @@ public class Logger {
 
     public void log(String logType, Object log) {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Settings.logsPath  + dateFormat + "/" + timeFormat, true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Settings.logsPath + dateFormat + "/" + timeFormat, true));
             writer.newLine();
             writer.write(logType + " " + log);
             writer.close();
@@ -40,7 +39,7 @@ public class Logger {
     public void createLog(String logType, String log) {
         try {
             IO.createDir(Settings.logsPath + dateFormat);
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Settings.logsPath  + dateFormat + "/" + timeFormat));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Settings.logsPath + dateFormat + "/" + timeFormat));
             writer.write(logType + " " + log);
             writer.close();
         } catch (IOException ioex) {

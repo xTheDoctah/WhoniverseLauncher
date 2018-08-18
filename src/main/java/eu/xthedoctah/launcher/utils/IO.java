@@ -1,7 +1,6 @@
 package eu.xthedoctah.launcher.utils;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -22,8 +21,20 @@ public class IO {
         return true;
     }
 
+    public static void writeFile(String path, String text) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+        writer.write(text);
+        writer.close();
+    }
+
     public static String readFile(String path, Charset encoding) throws IOException {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded, encoding);
+    }
+
+    public static Boolean isEmpty(String path) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(path));
+        return (reader.readLine() == null);
+
     }
 }

@@ -1,7 +1,21 @@
 .btn {
     -fx-background-color: #27ae60;
+    -fx-background-radius: 0;
 }
 
 .text-label {
     -fx-font-size: 20px
+}
+
+.input {
+    -fx-background-radius: 0;
+    -fx-padding: 2;
+}
+
+#username {
+    -fx-background-radius: 4 4 0 0;
+}
+
+#password {
+    -fx-background-radius: 0 0 4 4;
 }

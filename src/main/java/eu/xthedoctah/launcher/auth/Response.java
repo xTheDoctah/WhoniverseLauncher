@@ -3,11 +3,11 @@ package eu.xthedoctah.launcher.auth;
 import eu.xthedoctah.launcher.utils.ToJson;
 
 public class Response extends ToJson {
+    private static Response istanza;
     private SelectedProfile selectedProfile;
     private String accessToken;
     private AvailableProfiles[] availableProfiles;
     private String clientToken;
-    private static Response istanza;
 
     public static Response getInstance() {
         if (istanza == null) {

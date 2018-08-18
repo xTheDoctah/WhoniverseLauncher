@@ -5,6 +5,8 @@ import eu.xthedoctah.launcher.utils.ToJson;
 import java.util.UUID;
 
 public class User extends ToJson {
+    /*Signleton*/
+    private static User istanza;
     private Agent agent;
     private String username;
     private String password;
@@ -23,9 +25,6 @@ public class User extends ToJson {
         this.clientToken = clientToken;
         this.requestUser = requestUser;
     }
-
-    /*Signleton*/
-    private static User istanza;
 
     public static User getInstance() {
         if (istanza == null) {

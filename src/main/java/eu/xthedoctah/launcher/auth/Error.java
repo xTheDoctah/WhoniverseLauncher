@@ -3,9 +3,12 @@ package eu.xthedoctah.launcher.auth;
 import eu.xthedoctah.launcher.utils.ToJson;
 
 public class Error extends ToJson {
+    private static Error istanza;
     private String error;
     private String errorMessage;
-    private static Error istanza;
+
+    public Error() {
+    }
 
     public static Error getInstance() {
         if (istanza == null) {
@@ -16,9 +19,6 @@ public class Error extends ToJson {
 
     public static void setInstance(Error istanza2) {
         istanza = istanza2;
-    }
-
-    public Error() {
     }
 
     public String getError() {
