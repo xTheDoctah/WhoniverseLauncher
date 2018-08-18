@@ -10,7 +10,7 @@ What kind of project is this? Just a simple Minecraft Launcher a custom one.
 
 ## Built With
 
-* IntelliJ IDEA as a jar application.
+* mvn clean package
 
 ## Authors
 
