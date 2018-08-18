@@ -58,7 +58,6 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>WhoniverseLauncher</finalName>
         <!--<<plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -103,6 +102,7 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <finalName>WhoniverseLauncher</finalName>
                     <archive>
                         <manifest>
                             <mainClass>eu.xthedoctah.launcher.Main</mainClass>
