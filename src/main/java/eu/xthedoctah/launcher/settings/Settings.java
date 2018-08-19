@@ -33,7 +33,12 @@ public class Settings {
             IO.createDir(logsPath);
             IO.createFileIfNotExist(userProfiles);
             IO.createFileIfNotExist(settingsFile);
-
+            if (Settings.getInstance().readUsers().size() > 0) {
+                Settings.getInstance().readUsers().forEach(item -> {
+                    if (item.getSelected())
+                        Profile.setInstance(item);
+                });
+            }
         } catch (SecurityException | IOException e) {
             e.printStackTrace();
         } finally {

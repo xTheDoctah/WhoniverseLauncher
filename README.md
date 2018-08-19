@@ -8,17 +8,16 @@ What kind of project is this? Just a simple Minecraft Launcher a custom one.
 * Modify every file u need to.
 * Build-it and run it!
 
-## Built With
+## How to build
 
-* mvn clean package
+* `mvn clean package`
 
 ## Authors
 
 * **Alessio Caldarigi**  - [xTheDoctah](https://github.com/xTheDoctah)
 
-## Jenkins Section
-
-* Test1
+## Libraries
+* **JFoenix** - [Check it out!](https://github.com/jfoenixadmin/JFoenix)
 
 ## License
 

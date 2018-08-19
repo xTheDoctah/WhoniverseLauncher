@@ -1,6 +1,9 @@
 package eu.xthedoctah.launcher.controller;
 
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import eu.xthedoctah.launcher.auth.Auth;
 import eu.xthedoctah.launcher.auth.Error;
 import eu.xthedoctah.launcher.auth.Response;
@@ -13,8 +16,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -23,11 +24,11 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     @FXML
-    public PasswordField passwordBox;
+    public JFXPasswordField passwordBox;
     @FXML
-    public TextField usernameBox;
+    public JFXTextField usernameBox;
     @FXML
-    public Button closeButton;
+    public JFXButton closeButton;
     @FXML
     public CheckBox rememberMe;
     private Logger logger = Logger.getInstance();
@@ -62,6 +63,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        usernameBox.setText(Profile.getInstance().getUsername());
+        passwordBox.setText(Profile.getInstance().getPassword());
     }
 }

@@ -19,3 +19,17 @@
 #password {
     -fx-background-radius: 0 0 4 4;
 }
+
+.text-field {
+    -fx-prompt-text-fill: #bdc3c7;
+    -fx-text-fill: #ecf0f1;
+}
+
+.jfx-button-type {
+    -fx-text-fill: #ecf0f1;
+    -fx-background-color: #27ae60;
+}
+.jfx-button-type2 {
+    -fx-text-fill: #ecf0f1;
+    -fx-background-color: #e74c3c;
+}
